@@ -1,6 +1,6 @@
-# [Project name]
+# Rakt Kavach
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Rakt Kavach is a bilingual dark-mode PWA for India's national blood grid, giving donors a secure mobile identity, digital donor card, QR pass, blood credit wallet, and donation history.
 
 ## Run & Operate
 
@@ -22,23 +22,31 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/rakt-kavach/src/App.tsx` — the authenticated donor wallet, onboarding, OTP demo flow, and local profile state.
+- `artifacts/rakt-kavach/src/index.css` — the Rakt Kavach dark neon grid theme, typography, motion, and responsive foundations.
+- `artifacts/rakt-kavach/public/manifest.webmanifest` — install metadata for the PWA.
+- `artifacts/rakt-kavach/public/sw.js` — lightweight offline shell caching.
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- The first build is frontend-only so the complete donor journey can be explored without provisioning a backend or external auth provider.
+- A demo OTP flow is used for the prototype; donor profile, biometric preference, language, and donation updates persist in local storage.
+- The app is route-aware with a public onboarding/auth route and a protected `/home` wallet route, while the installed PWA starts at `/`.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+- Splash and three-step onboarding in English and Hindi.
+- Mobile number + demo OTP verification, biometric unlock toggle, and generated `RKT-XXXX-XXXX` donor IDs.
+- Digital donor card with blood group, reward tier, live QR pass, blood credits, eligibility date, profile editing, and donation logging.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+_No durable preferences recorded._
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- The PWA service worker is progressive enhancement; the app remains usable if registration is unavailable.
+- The demo OTP button fills `2468`; this is intentionally not real authentication.
 
 ## Pointers
 
