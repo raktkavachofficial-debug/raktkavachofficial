@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Rakt Kavach"
+description = "A role-based national blood grid command center for citizens, donors, hospitals, labs, authorities, and administrators, with live inventory, emergency coordination, digital donor wallets, and PWA installation."
+version = "1.0.0"
+id = "artifacts/rakt-kavach-production"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19983
+
+[services.development]
+run = "pnpm --filter @workspace/rakt-kavach-production run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/rakt-kavach-production", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/rakt-kavach-production/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19983"
+BASE_PATH = "/"

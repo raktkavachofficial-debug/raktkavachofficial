@@ -1,0 +1,19 @@
+{
+  "name": "Rakt Kavach — National Blood Grid",
+  "short_name": "Rakt Kavach",
+  "description": "Live operations for India's national blood network.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#050B14",
+  "theme_color": "#050B14",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
