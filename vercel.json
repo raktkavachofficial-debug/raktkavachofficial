@@ -1,5 +1,4 @@
 {
-  "public": false,
   "buildCommand": "pnpm --filter rakt-kavach build",
   "outputDirectory": "artifacts/rakt-kavach/dist"
 }
