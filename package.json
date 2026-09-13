@@ -17,6 +17,7 @@
     "typescript": "~5.9.3"
   },
   "vercel": {
+    "buildCommand": "pnpm --filter rakt-kavach build",
     "outputDirectory": "artifacts/rakt-kavach/dist"
   }
 }
