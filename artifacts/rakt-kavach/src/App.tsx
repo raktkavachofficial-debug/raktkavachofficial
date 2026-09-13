@@ -1,6 +1,6 @@
 import { type ReactNode, useEffect, useMemo, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ErrorBoundary } from '@/components/error-boundary';
+
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { createCommandCenterAdapter, emptyCommandCenterData, loadCommandCenterData } from '@/store/commandCenter';
@@ -299,7 +299,7 @@ function AdminRoute() { return <Shell><AdminPage /></Shell>; }
 
 function RoutedErrorBoundary({ children }: { children: ReactNode }) {
   const [location] = useLocation();
-  return <ErrorBoundary resetKey={location}>{children}</ErrorBoundary>;
+  return <ErrorBoundary resetKey={location}>{children}</div>;
 }
 
 function App() {
