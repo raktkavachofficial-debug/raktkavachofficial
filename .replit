@@ -6,7 +6,7 @@ deploymentTarget = "autoscale"
 
 [deployment.postBuild]
 args = ["pnpm", "store", "prune"]
-env = { "CI" = "true", "PORT" = "3000", "VITE_PORT" = "3000" }
+env = { "CI" = "true" }
 
 [workflows]
 runButton = "Project"
@@ -15,15 +15,6 @@ runButton = "Project"
 stack = "PNPM_WORKSPACE"
 expertMode = true
 
-[nix]
-channel = "stable-25_05"
-packages = ["yakut"]
-
-# 🚀 सिर्फ पोर्ट 3000 को खोलने और चलाने के लिए सख्त निर्देश
-[[ports]]
-local = 3000
-external = true
-
-[run]
-compile = "pnpm install"
-command = "PORT=3000 VITE_PORT=3000 pnpm --filter rakt-kavach build"
+[postMerge]
+path = "scripts/post-merge.sh"
+timeoutMs = 20000
