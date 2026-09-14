@@ -1,7 +1,7 @@
 import { type ReactNode, useEffect, useMemo, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import { Toaster } from '@/components/ui/toaster';
+import { Toaster } from './components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { createCommandCenterAdapter, emptyCommandCenterData, loadCommandCenterData } from '@/store/commandCenter';
 import type { BloodGroup, CommandCenterData, UserRole } from '@/types';
